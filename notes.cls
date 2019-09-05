@@ -4,9 +4,10 @@
 
 \usepackage[hmargin=2cm, vmargin=2cm]{geometry}
 \usepackage{amsthm}
+\usepackage{amssymb}
 
 \theoremstyle{definition}
 \newtheorem{myex}{Ex}
 
-\newtheorem*{mydef}{Def}
+\newtheorem*{mydef}{\underline{Def}}
 
