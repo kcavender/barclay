@@ -6,9 +6,40 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
+\usepackage{enumitem}
+
+\makeatletter
+\newtheoremstyle{indented}
+	{3pt}
+	{3pt}
+	{\addtolength{\@totalleftmargin}{3.5em}
+	 \addtolength{\linewidth}{-3.5em}
+	 \parshape 1 2.5em \linewidth}
+	{}
+	{\bfseries}
+	{.}
+	{.5em}
+	{}
+\makeatother
+
+\renewcommand{\theenumi}{\alph{enumi}}
 
 \theoremstyle{definition}
 \newtheorem{myex}{Ex}
 
 \newtheorem*{mydef}{\underline{Def}}
 \newtheorem*{remark}{Remark}
+
+\theoremstyle{indented}
+\newtheorem*{myproof}{\textit{Proof}}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}
+\makeatother
+
+
+
+
+
+

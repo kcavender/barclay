@@ -1,4 +1,4 @@
-\documentclass[12pt, oneside, letterpaper]{notes}
+\documentclass[14pt, oneside, letterpaper]{notes}
 
 \begin{document}
 \title{Class Notes for STT861}
@@ -17,13 +17,19 @@ A set function $P: \mathscr{A} \mapsto \mathbb{R}$ is a probability if it satisf
 \indent \indent $ P(\cup_{i = 1}^{\infty} A_i ) = \sum_{i=1}^{infty} P( A_i )$
 
 \subsection*{Consequences}
-a) $P(\emptyset) = 0$ \\
-b) if $A$ and $B$ are pairwise disjoint, then $P(A \cup B) = P(A) + P(B)$ \\
-	\indent General Form: if $A_1$, ... , $A_n$ are pairwise disjoint, then \\
-	\indent \indent $P(\cup_{i=1}^n A_i) = \sum_{i=1}^n P(A_i)$ \\
-c) $P(A^c) = 1-P(A)$ \\
-d) if $A \subset B$, then $P(A) \geq P(B)$ and $P(B \setminus A) = P(B) - P(A)$ \\
-e) $P(A) \geq 1,  \: \forall \: A \subset \mathscr(A)$ \\
+\begin{enumerate}
+	\item $P(\emptyset) = 0$ 
+	
+	\item if $A$ and $B$ are pairwise disjoint, then $P(A \cup B) = P(A) + P(B)$ \\
+	General Form: if $A_1$, ... , $A_n$ are pairwise disjoint, then \\
+	$P(\cup_{i=1}^n A_i) = \sum_{i=1}^n P(A_i)$ 
+
+	\item $P(A^c) = 1-P(A)$
+
+	\item if $A \subset B$, then $P(A) \geq P(B)$ and $P(B \setminus A) = P(B) - P(A)$ 
+
+	\item $P(A) \geq 1,  \: \forall \: A \subset \mathscr(A)$ 
+\end{enumerate}
 
 \section{Class Notes}
 \begin{mydef}
@@ -32,7 +38,7 @@ e) $P(A) \geq 1,  \: \forall \: A \subset \mathscr(A)$ \\
 	\indent i) $E_i \cap E_j = \emptyset, \: \forall \: i \neq j$ 
 		\textit{(pairwise disjoint)} \\
   	\indent ii) $\cup_{i=1}^{\infty}E_i = A$ 
-		\textit{(Exhaustive)}
+		\textit{(exhaustive)}
 \end{mydef}
 
 \begin{remark}
@@ -47,39 +53,60 @@ e) $P(A) \geq 1,  \: \forall \: A \subset \mathscr(A)$ \\
 	If $E_n: n \geq 1$ is a partition of $A$, then $P(A) = \sum_{i=1}^{\infty} P(E_i)$
 \end{remark}
 
-\textbf{More Consequences} \\
-f) Suppose $A$ and $B$ are two events.  Then $\{A \cap B, A^c \cap B\}$
-	is a partition of $B$.  Also, $P(A^c \cap B) = P(B) - P(A \cap B)$ \\
-g) $A$ and $B$ are two events.  $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ \\
-	\indent (This is the generalized version of b)) \\
-h) if $\{C_1, C_2, ... \}$ is a partition of \textbf{S}, then \\
-	\indent $P(A) = \sum_{i=1}^{\infty} P(A \cap C_i)$ \\
+\subsection*{More Consequences} 
+\begin{enumerate}[resume]
+	\item Suppose $A$ and $B$ are two events.  Then $\{A \cap B, A^c \cap B\}$
+	is a partition of $B$.  Also, $P(A^c \cap B) = P(B) - P(A \cap B)$ 
 
-\begin{mydef}
-	i) \textbf{Boole's Inequality} \\
-	\indent $P(\cup_{i=1}^{\infty} A_i) \leq \sum_{i=1}^{\infty}P(A_i)$ \\
-\end{mydef}
+	\begin{myproof}
+		$(A \cap B) \cap (A^c \cap B) = 
+		(A \cap A^c) \cap (B \cap B) = 0$  \textit{(pairwise disjoint)} \\
+		$(A \cap B) \cup (A^c \cap B) = (A \cup A^c) \cap B = B $ 
+		\textit{(exhaustive)} 
+	\end{myproof}
 
-\begin{mydef}
-	j) \textbf{Bonferroni's Inequality}\\
-	\indent $P(\cap_{i=1}^{\infty} A_i) \geq 1 - \sum_{i=1}^{\infty} P(A_i^c)$
-\end{mydef}
+	\item $A$ and $B$ are two events.  $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ \\
+	(This is the generalized version of b)) 
+
+	\item if $\{C_1, C_2, ... \}$ is a partition of \textbf{S}, then \\
+	$P(A) = \sum_{i=1}^{\infty} P(A \cap C_i)$ 
+
+	\item\textbf{Boole's Inequality} \\
+	\indent $P(\cup_{i=1}^{\infty} A_i) \leq \sum_{i=1}^{\infty}P(A_i)$ 
+	
+	\item \textbf{Bonferroni's Inequality}\\
+	$P(\cap_{i=1}^{\infty} A_i) \geq 1 - \sum_{i=1}^{\infty} P(A_i^c)$
+\end{enumerate}
+
+\begin{remark}
+	Proving Bonferroni from Boole: \\
+	\indent $P(\cup_{i=1}^{\infty} A_i^c) \leq 
+	\sum_{i=1}^{\infty} P(A_i^c)$ \\
+	\indent $1- P(\cup_{i=1}^{\infty} A_i^c) \:  \geq
+	1 - \sum_{i=1}^{\infty} P(A_i^c)$ \\
+	\indent $ = P[(\cup_{i=1}^{\infty} A_i^c)^c] \: \geq$ ...  \\
+	\indent $ = P[\cap_{i=1}^{\infty} (A_i^c)^c] \: \geq$ ... \\
+	\indent $ = P(\cap_{i=1}^{\infty} A_i ) \: \geq
+	1- \sum_{i=1}^{\infty} P(A_i^c)$ 
+\end{remark}
 
 \begin{mydef}
 	A sequence of events $\{A_1, A_2 ...\}$ is \textbf{increasing to event $A$} if: \\
 	\indent $A_1 \subset A_2 \subset ...$  \\
 	\indent and $A = \cup_{n=1}^{\infty} A_n$ \\
-	Notation: $A_n \uparrow A$
+	\indent Notation: $A_n \uparrow A$
 \end{mydef}
 
 \begin{mydef}
 	Similarly, $B_n \downarrow B$ if $B_1 \supset B_2 \supset ... $ and
-	$B = \cap_{n=1}^{\infty} B_n$ \\
+	$B = \cap_{n=1}^{\infty} B_n$ 
 \end{mydef}
-	
-k) If $A_n \uparrow A$, then $P(A) = \lim_{n \to \infty} P(A_n)$ \\
-l) If $B_n \downarrow B$ then $P(B) = \lim_{n \to \infty} P(B_n)$ \\
 
+\begin{enumerate}[resume]	
+	\item If $A_n \uparrow A$, then $P(A) = \lim_{n \to \infty} P(A_n)$ 
+
+	\item If $B_n \downarrow B$ then $P(B) = \lim_{n \to \infty} P(B_n)$ 
+\end{enumerate}
 
 
 
