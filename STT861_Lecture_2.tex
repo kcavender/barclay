@@ -1,0 +1,172 @@
+\documentclass[12pt, oneside, letterpaper]{notes}
+
+\begin{document}
+\title{Lecture 2 Notes for STT861}
+\author{Kenyon Cavender}
+\date{2019-08-30}
+\maketitle
+
+\section{Review}
+
+\begin{mydef}
+  A \textbf{random experiment} is an action which will result 
+  in one of the many possible outcomes. 
+\end{mydef}
+
+\begin{mydef}
+  A \textbf{sample space} is the collection of all possible 
+  outcomes of a random experiment.  We shall denote by \textbf{S}.
+\end{mydef}
+
+\begin{mydef}
+  An \textbf{Event} is a subset of sample space \textbf{S} for 
+  which we can define probability.
+\end{mydef}
+
+\section{Class Notes}
+\begin{mydef}
+  \textbf{Intersection} A, B are two events.  \\
+  \indent $A \cap B = \{x: x \in A$ and $x \in B\}$
+\end{mydef}
+
+\begin{mydef}
+  \textbf{Union} A, B are two events. \\
+  \indent $A \cup B = \{x: x \in A$ or $x \in B$ or $both\}$
+\end{mydef}
+
+\begin{mydef}
+  A and B are \textbf{disjoint} if $A \cap B = \emptyset$
+\end{mydef}
+
+\noindent \underline{\textbf{Properties of set theory}}  \\
+\textbf{Commutative}  \\
+\indent $A \cup B = B \cup A$ and $A \cap B = B \cap A$ \\
+\textbf{Associative}\\
+\indent $(A \cup B) \cup C = A \cup (B \cup C) =: A \cup B \cup C$ \\
+\indent $(A \cap B) \cap C = A \cap (B \cap C) =: A \cap B \cap C$ \\
+\textbf{Distributive}\\
+\indent $(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$ \\
+\indent $(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$ \\
+\textbf{De Morgan's Law}\\
+\indent $(A \cup B)^c = A^c \cap B^c$ \\
+\indent $(A \cap B)^c = A^c \cup B^c$ \\
+
+\begin{remark}
+	Proving Distributive Property: \\
+	$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$ \\
+	
+	\begin{myproof}
+		Prove left direction: \\
+		$x \in (A \cup B) \cap C \Rightarrow x \in A \cup B$ and $x \in C$ \\
+		$\Rightarrow (x \in A$ or $x \in B)$ and $x \in C$ \\
+		$\Rightarrow (x \in A$ and $x \in C)$ 
+		or $(x \in A$ and $x \in C)$ or both \\
+		$\Rightarrow  x \in A \cap C$ or $x \in B \cap C$ or both \\
+		$\Rightarrow  x \in (A\cap C) \cup (B \cap C)$ \\
+		Right direction is reverse of above.
+	\end{myproof}
+\end{remark}
+
+\begin{mydef}
+  \textbf{Set Difference}\\
+  \indent $A \setminus B = \{x: x \in A$, but $x \notin B \}$
+\end{mydef}
+
+\begin{mydef}
+  \textbf{Symmetric Difference}\\
+  \indent $A \triangle B = \{x: x \in A \setminus B$, or 
+  $x \in B \setminus A \}$
+\end{mydef}
+
+\begin{mydef}
+  A set $A$ is \textbf{finite} if there exists a 1-1 fn $A \mapsto 
+  \{ 1, 2, ..., n \}$ for some $n \in \mathbb{N}$
+\end{mydef}
+
+\begin{mydef}
+	A set $A$ is \textbf{countably infinite} if there exists a one-to-one
+	function from $A \mapsto \mathbb{N}$.
+\end{mydef}
+
+\begin{mydef}
+	A set is called \textbf{coutable} if it is either finite or countably 
+	infinite.
+\end{mydef}
+
+\subsection*{Consequences}
+\begin{enumerate}
+	\item $A \cap B \subset A$ and $A \cap B \subset B$
+	
+	\item $A \cap A = A$
+
+	\item if $A \subset B $ then $A \cap B = A $
+	
+	\item $A \subset A \cup B$ and $B \subset A \cup B$
+
+	\item $A \cup A = A$
+
+	\item if $ A \subset B$ then $A \cup B = B$
+
+	\item $A \cup A^c = \textbf{S}$ and $A \cap A^c = \emptyset$
+
+	\item if $A \subset C$ and $B \subset C$ 
+	then $A \cap B \subset A \cup B \subset C$
+
+	\item $\emptyset$ is disjoint to all events
+
+	\item if $a \cap B = \emptyset$ then $A \subset B^c$
+	and $B \subset A^c$
+
+	\item if $A \subset B$, then $B^c \subset A^c$
+	
+	\item $A \setminus B = A \cap B^c$ and $B \setminus A = A^c \cap B$
+	
+	\item $A \triangle B = (A \cup B) \setminus (A \cap B) $
+\end{enumerate}
+
+\begin{remark}
+	There is some stuff here about lambda that I don't fully grok
+%	Let $A_1, A_2, ...$ be a sequence of sets, then 
+%	$A_1 \cup A_2 \cup ... = \cup_{k=1}^{\infty}A_k
+%	= \{x: x \in A_i$ for some $i \in \mathbb{N}$ \\
+	
+\end{remark}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
