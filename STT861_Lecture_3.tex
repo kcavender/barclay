@@ -1,27 +1,106 @@
 \documentclass[12pt, oneside, letterpaper]{notes}
 
 \begin{document}
-\title{Lecture 2 Notes for STT861}
+\title{Lecture 3 Notes for STT861}
 \author{Kenyon Cavender}
-\date{2019-08-30}
+\date{2019-09-04}
 \maketitle
 
 \section{Review}
 \begin{mydef}
-  A set with only one outcome from \textbf{S} is called a \textbf{simple event}.
+	A set with only one outcome from \textbf{S} is called a \textbf{simple event}.
 \end{mydef}
 
 \begin{mydef}
-  A set with more than one outcome is known as a \textbf{composite event}.
+	A set with more than one outcome is known as a \textbf{composite event}.
 \end{mydef}
 
 \begin{mydef}
-  A \textbf{set function} is a function defined on a set.
+	A \textbf{set function} is a function defined on a set.
 \end{mydef}
 
 \begin{mydef}
-  \textbf{Probability} is a set function which takes a real value.  
+	\textbf{Probability} is a set function which takes a real value.  
 \end{mydef}
+
+\begin{mydef}
+	The \textbf{Power Set} $\mathscr{P}$ = collection of all subset of \textbf{S}
+\end{mydef}
+
+\section{Class Notes}
+\begin{remark}
+	Consider $\textbf{S} = \{H, T\}$ and $\mathscr{P}(\textbf{S}) = \{\emptyset, 
+	\{H\}, \{T\}, \textbf{S} \}$ \\
+	\indent If \textbf{S} is countable, we can take $\mathscr{P}(\textbf{S}) $
+	as the domain for probability function P.  \\
+	\indent However, if \textbf{S} is uncountable, then \textbf{S} is too large, 
+	and it is not possible to define a function for $\mathscr{P}(\textbf{S}) $
+\end{remark}
+
+\begin{mydef}
+	$\mathscr{A}$ is a collection of subsets of $\textbf{S}[\neq \emptyset]$
+	satisfying: \\
+	\indent i) $\textbf{S} \in \mathscr{A}$ \\
+	\indent ii) if $ A \subset \mathscr{A}$, then $A^c \in \mathscr{A}$ \\
+	\indent iii) if $A_1, A_2, ... \in \mathscr{A}$ then 
+	$\cup_{i=1}^{\infty} A_i \in \mathscr{A} $ \\
+	We call $\mathscr{A}$ a $\sigma$ - algebra (or $\sigma$ - field) \\
+	Any domain should be a $\sigma$ - field
+\end{mydef}
+
+\begin{myex}
+	For $\textbf{S} = \{H,T\}$ let's define $\mathscr{A} 
+	= \{\emptyset, \textbf{S}\}$  (the trivial $\sigma$ - field)
+\end{myex}
+
+\begin{myex}
+	$\textbf{S} = \{a, b, c\}$ let's deffine $\mathscr{A} 
+	= \{\emptyset, \{a\}, \{b, c\}, \textbf{S} \}$ (a $\sigma$ - field) 
+\end{myex}
+
+\begin{mydef}
+	$(\textbf{S}, \mathscr{A})$ is a measurable space
+\end{mydef}
+
+\begin{mydef}
+	$(\textbf{S}, \mathscr{A}, P)$ is a (probability) measure space
+\end{mydef}
+
+\begin{myex}
+	If $A, B \in \mathscr{A}$, is $A \cup B$ in $\mathscr{A}$? \\
+	Yes.  By req. iii) if $A_1 = A, A_2 = B, A_3 = \emptyset = A_4 = A_5 ...$
+\end{myex}
+
+\begin{myex}
+	If $A, B \in \mathscr{A}$ is $A \cap B in \mathscr{A}$? \\
+	Yes.  By req ii) $A^c, B^c \in \mathscr{A} \Rightarrow 
+	A^c \cup B^c \in \mathscr{A}$ \\
+	Therefore, $(A^c \cup B^c)^c \in \mathscr{A}$ \\
+	By De Morgan's law, $(A^c \cup B^c)^c = A \cap B$
+\end{myex}	
+
+\begin{mydef}
+	Given sample space $\textbf{S} (\neq \emptyset)$, and the 
+	measurable space $(\textbf{S}, \mathscr{A})$ \\
+	A function $P: \mathscr{A} \mapsto \mathbb{R}$ is called 
+	probability if it satisfies:
+	\begin{enumerate}
+		\item $P(A) \geq 0$ for any $A \in mathscr{A}$
+		\item $P(\textbf{S}) = 1$
+		\item if $A_1, A_2 ...$ are disjoint sets from $\mathscr{A}$,
+		then $P(\cup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)$
+	\end{enumerate}
+\end{mydef}
+
+\subsection*{Desired Properties of P(.)}
+\begin{enumerate}
+	\item $P(\emptyset) = 0$
+	\item If $A$ and $B$ are disjoint then $P(A \cup B) = P(A) + P(B)$
+	\item $P(A^c) = 1- P(A)$
+	\item If $A \subset B$ then $P(A) \leq P(B)$
+	\item $P(A) \leq 1$
+\end{enumerate}
+
 
 
 
