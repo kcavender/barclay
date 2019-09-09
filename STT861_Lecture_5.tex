@@ -1,0 +1,80 @@
+\documentclass[12pt, oneside, letterpaper]{notes}
+
+\begin{document}
+\title{Lecture 5 Notes for STT861}
+\author{Kenyon Cavender}
+\date{2019-09-09}
+\maketitle
+
+\section{Review}
+$\textbf{S} (\neq \emptyset)$ Sample Space
+$\mathscr{A} = \sigma$ - field
+A probability $P: \mathscr{A} \mapsto \mathbb{R}$ satisfies
+	\index $P(A) \geq 0 \: \forall A \in \mathscr{A} $\\
+	\index $P(\textbf{S}) = 1$ \\
+	\index If $A_n \in \mathscr{A}, n=1, 2, ...$ and $A_n's$ are parwise disjoint
+	then $P(\cup_{n=1}^{\infty} A_n) = \sum_{n=1}^{\infty} P(A_n)$
+
+\section{Class Notes}
+\begin{myex}
+	Let $\textbf{S} = \{s_1, s_2, ...\}$ be a countable sample  space \\
+	Let $\mathscr{A} = \mathscr{P}(\textbf{S})$
+	Suppose $\{P_n : n \geq 1\} $ in a sequence satisfying:
+	\begin{enumerate}
+		\item $p_n \geq 0$ 
+		\item $\sum_{n=1}^{\infty}p_n = 1$
+	\end{enumerate}
+	For any $A \in \mathscr{A}$ define: $P(A) = \sum_{\{j: s_j \in A\}} p_j $
+
+\begin{remark}
+	Suppose $A = \{s_3, s_{10}, s_{19} \}$ \\
+	$P(A) = p_3 + p_{10} + p_{19}$ \\
+	\vspace{5pt}
+	
+	Suppose: \\	
+	$A_1 = \{s_{11}, s_{12}, s_{13} ... \}$ \\
+	$A_2 = \{s_{21}, s_{22}, s_{23} ... \}$ \\
+	$A_3 = \{s_{31}, s_{32}, s_{33} ... \}$ \\
+	etc. All $A_n$ are pairwise disjoint
+
+
+
+\end{remark}
+
+\end{myex}
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
