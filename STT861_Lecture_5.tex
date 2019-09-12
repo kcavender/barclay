@@ -27,17 +27,30 @@ A probability $P: \mathscr{A} \mapsto \mathbb{R}$ satisfies
 	For any $A \in \mathscr{A}$ define: $P(A) = \sum_{\{j: s_j \in A\}} p_j $
 
 \begin{remark}
-	Suppose $A = \{s_3, s_{10}, s_{19} \}$ \\
+	Suppose: \\
+	$A = \{s_3, s_{10}, s_{19} \}$ \\
 	$P(A) = p_3 + p_{10} + p_{19}$ \\
-	\vspace{5pt}
+	\vspace{3pt}
 	
-	Suppose: \\	
+	\noindent Suppose: \\	
 	$A_1 = \{s_{11}, s_{12}, s_{13} ... \}$ \\
 	$A_2 = \{s_{21}, s_{22}, s_{23} ... \}$ \\
-	$A_3 = \{s_{31}, s_{32}, s_{33} ... \}$ \\
-	etc. All $A_n$ are pairwise disjoint
+	$A_3 = \{s_{31}, s_{32}, s_{33} ... \}$ etc.\\
+	All $A_n$ are pairwise disjoint and therefore, $s_{ij}$ are distinct
+	for all $i,j$ \\
+	$P(\cup_{n=1}^{\infty}A_n) = P(\cup_{n-1}^{\infty}\{s_{n1}, s_{n2}...\} )$ \\
+	\indent $ = P(\cup_{n=1}^{\infty} \cup_{j=1}^{\infty} \{s_{nj}\}) =
+	\sum_{n=1}^{\infty}(\sum_{j=1}^{\infty} p_{nj})  $ \\
+	As $A_n = \{s_{n1}, s_{n2} ... \}$ therefore $P(A_n) = 
+	\sum_{j=1}^{\infty}p_{nj} $ \\
+	\vspace{3pt}
 
-
+	\noindent Suppose: \\
+	$\textbf{S} = \{1,2,3,4 ...\}$ and $p_n = (frac{1}{2})^n n=1,2,3 ...$ \\
+	Then, $\sum_{n-1}^{\infty} = 1$ by geometric sum:
+	$\sum_{n=0}^{\infty}a^n = \frac{1}{1-a}$ if $|a| < 1 $ \\
+	Therefore, $$\sum_{n=1}^{\infty}(\frac{1}{2})^n 
+	= \sum_{n=0}^{\infty}(\frac{1}{2})^n-1 = \frac{1}{1-1/2} -1 = 1$$
 
 \end{remark}
 

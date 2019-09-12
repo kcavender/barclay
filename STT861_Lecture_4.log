@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.28)  12 SEP 2019 11:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.28)  12 SEP 2019 10:44
 entering extended mode
-**./STT861_Lecture_5.tex
-(STT861_Lecture_5.tex
+**./STT861_Lecture_4.tex
+(STT861_Lecture_4.tex
 LaTeX2e <2018-12-01>
 (notes.cls ("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -270,8 +270,9 @@ Package: xparse 2019-05-28 L3 Experimental document command parser
 sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count186
-))) (STT861_Lecture_5.aux)
-\openout1 = `STT861_Lecture_5.aux'.
+)))
+No file STT861_Lecture_4.aux.
+\openout1 = `STT861_Lecture_4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -285,7 +286,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -335,32 +335,34 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 7.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{C:/Users/kenyo_4i2gc4b/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(STT861_Lecture_5.aux) ) 
+{C:/Users/kenyo_4i2gc4b/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
+
+(STT861_Lecture_4.aux) ) 
 Here is how much of TeX's memory you used:
- 11980 strings out of 492895
- 227216 string characters out of 3133455
- 260462 words of memory out of 3000000
- 15880 multiletter control sequences out of 15000+200000
- 540883 words of font info for 60 fonts, out of 3000000 for 9000
+ 11984 strings out of 492895
+ 227224 string characters out of 3133455
+ 262462 words of memory out of 3000000
+ 15884 multiletter control sequences out of 15000+200000
+ 541895 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,6n,65p,842b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/rsfs/rsfs10.pfb>
-Output written on STT861_Lecture_5.pdf (1 page, 133892 bytes).
+x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/rsfs/rsfs10.pfb>
+Output written on STT861_Lecture_4.pdf (2 pages, 151927 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 69 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
