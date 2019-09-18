@@ -50,14 +50,53 @@ A probability $P: \mathscr{A} \mapsto \mathbb{R}$ satisfies
 	Then, $\sum_{n-1}^{\infty} = 1$ by geometric sum:
 	$\sum_{n=0}^{\infty}a^n = \frac{1}{1-a}$ if $|a| < 1 $ \\
 	Therefore, $$\sum_{n=1}^{\infty}(\frac{1}{2})^n 
-	= \sum_{n=0}^{\infty}(\frac{1}{2})^n-1 = \frac{1}{1-1/2} -1 = 1$$
+	= \sum_{n=0}^{\infty}(\frac{1}{2})^n-1 = \frac{1}{1-1/2} -1 = 1$$ \\
+	\vspace{3pt}
+
+	\noindent Suppose for some set $A, P(A) = 1$ Does this imply $A=S$? \\
+	Does $P(B) = 0$ imply $B \neq \emptyset$? \\
+	Does $P(A \cap B) = 0$ imply $A,B$ are disjoint? \\
+	Not necessarily for all above! \\
+	\vspace{3pt}
+	
+	\noindent Suppose $S = \{1,2,3,4,... \}$ \\
+	$p_n = 0$ for all odd n \\
+	$p_n = \frac{1}{2}^{\frac{n}{2}}$ for all even n \\
+	$P($odd$) = 0$ and $P($even$) = 1$ \\
+	Let $A=\{1,3,5\}$, $B=\{3,5\}$.  $P(A \cap B) = 0$ and $A \cap B = \{3,5\}$
 
 \end{remark}
 
 \end{myex}
 
+\subsection{Counting}
+%
+%insert table of counting formulae here
+%
+
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{l|c|r}
+			& \textbf{WOR} & \textbf{WR} \\
+			\hline
+			
+			\textbf{Ordered} 
+			& $ \frac{n!}{(n-r)!} $ 
+			& $ n^r $ \\
+			
+			\textbf{Unordered} 
+			& $ \frac{n!}{r!(n-r)!} = {n \choose r} $ 
+			& $ {n+r-1 \choose r} $ \\
+
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
+\begin{mydef}
+	\textbf{Multiplication Rule} 
+	%put definition of multiplication Rule
+\end{mydef}	
 
 
 
