@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1569373219976.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "588767790",
+    "id" : "842669F7",
+    "lastKnownWriteTime" : 1569374843,
+    "last_content_update" : 1569374843918,
+    "path" : "~/STT 863/STT863 HW1.Rmd",
+    "project_path" : "STT863 HW1.Rmd",
+    "properties" : {
+        "cursorPosition" : "62,0",
+        "last_setup_crc32" : "8459A7Ebb338d19",
+        "scrollLine" : "28",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

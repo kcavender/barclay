@@ -1,29 +1,11 @@
 \documentclass[12pt, oneside, letterpaper]{notes}
 
 \begin{document}
-\title{Class Notes for STT861}
+\title{STT 861 Compendium}
 \author{Kenyon Cavender}
-\date{2019 - 09 - 01}
 \maketitle
 
-\section{Lecture One}
-
-\begin{myex}
-  Toss a fair coin; what is the probability of obtaining heads? 
-  $P(H) = \frac{1}{2}$
-\end{myex}
-
-\begin{myex}
-  Throw a fair die; what is the probability of obtaining 6?  
-  What about obtaining an even number? \\
-\indent$P(6) = \frac{1}{6}$ \\
-\indent$P(n = 2,4,6) = \frac{1}{2}$ 
-\end{myex}
-
-\paragraph{}
-  The probability is not the realized result, but the 
-  convergence of results as the number of iterations approaches 
-  infinity.  Review the Weak Law of Large Numbers.
+\section*{Definitions}
 
 \begin{mydef}
   A \textbf{random experiment} is an action which will result 
@@ -33,15 +15,6 @@
 \begin{mydef}
   A \textbf{sample space} is the collection of all possible 
   outcomes of a random experiment.  We shall denote by \textbf{S}.
-\end{mydef}
-
-\begin{mydef}
-  A \textbf{set} is a collection of some \underline{well defined} 
-  objects.
-\end{mydef}
-
-\begin{mydef}
-  \textbf{Outcomes} are also called \textbf{sample points}.
 \end{mydef}
 
 \begin{mydef}
@@ -56,33 +29,327 @@
 \end{mydef}
 
 \begin{mydef}
-  A set is called an empty set (or \textbf{null set}) if it contains no elements.\\
+  A set is called an empty set (or \textbf{null set}) if it contains 
+  no elements.\\
   \indent Notation: $\{ \emptyset \}$ \\
   \indent Convention: $\emptyset \subset A$, for any set A \\
   \indent Corrolary: $\forall A, \: \emptyset \subset A \subset \textbf{S}$
 \end{mydef}
 
 \begin{mydef}
-  \textbf{Complement} $A^c$ is the set such that $x \in A^c \Rightarrow x \notin A$.\\
+  \textbf{Complement} $A^c$ is the set such that $x \in A^c 
+  \Rightarrow x \notin A$.\\
   \indent In other words, $A^c = \{ x : x \notin A \}$ \\
-  \indent Notation: $A^c \: or \: A' \: or \: \overline{A}$
+  \indent Notation: $A^c$ or $A'$ or $\overline{A}$
 \end{mydef}
 
 \begin{mydef}
-  A set with only one outcome from \textbf{S} is called a \textbf{simple event}.
+  \textbf{Intersection} A, B are two events.  \\
+  \indent $A \cap B = \{x: x \in A$ and $x \in B\}$
 \end{mydef}
 
 \begin{mydef}
-  A set with more than one outcome is known as a \textbf{composite event}.
+  \textbf{Union} A, B are two events. \\
+  \indent $A \cup B = \{x: x \in A$ or $x \in B$ or both$\}$
 \end{mydef}
 
 \begin{mydef}
-  A \textbf{set function} is a function defined on a set.
+  A and B are \textbf{disjoint} if $A \cap B = \emptyset$
+\end{mydef}
+
+%work on fixing this formatting
+\noindent \underline{\textbf{Properties of set theory}}  \\
+\textbf{Commutative}  \\
+\indent $A \cup B = B \cup A$ and $A \cap B = B \cap A$ \\
+\textbf{Associative}\\
+\indent $(A \cup B) \cup C = A \cup (B \cup C) =: A \cup B \cup C$ \\
+\indent $(A \cap B) \cap C = A \cap (B \cap C) =: A \cap B \cap C$ \\
+\textbf{Distributive}\\
+\indent $(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$ \\
+\indent $(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$ \\
+\textbf{De Morgan's Law}\\
+\indent $(A \cup B)^c = A^c \cap B^c$ \\
+\indent $(A \cap B)^c = A^c \cup B^c$ 
+
+\begin{mydef}
+  \textbf{Set Difference}\\
+  \indent $A \setminus B = \{x: x \in A$, but $x \notin B \}$
 \end{mydef}
 
 \begin{mydef}
-  \textbf{Probability} is a set function which takes a real value.  
+  \textbf{Symmetric Difference}\\
+  \indent $A \triangle B = \{x: x \in A \setminus B$, or 
+  $x \in B \setminus A \}$
 \end{mydef}
+
+\begin{mydef}
+  A set A is \textbf{finite} if there exists a 1-1 fn $A \mapsto 
+  \{ 1, 2, ..., n \}$ for some $n \in \mathbb{N}$
+\end{mydef}
+
+%
+%End of Lecture 1
+%
+
+\begin{mydef}
+  A set $A$ is \textbf{finite} if there exists a 1-1 fn $A \mapsto 
+  \{ 1, 2, ..., n \}$ for some $n \in \mathbb{N}$
+\end{mydef}
+
+\begin{mydef}
+	A set $A$ is \textbf{countably infinite} if there exists a one-to-one
+	function from $A \mapsto \mathbb{N}$.
+\end{mydef}
+
+\begin{mydef}
+	A set is called \textbf{coutable} if it is either finite or countably 
+	infinite.
+\end{mydef}
+
+%
+%End of lecture 2
+%
+
+\begin{mydef}
+	$\mathscr{A}$ is a collection of subsets of $\textbf{S}[\neq \emptyset]$
+	satisfying: \\
+	\indent i) $\textbf{S} \in \mathscr{A}$ \\
+	\indent ii) if $ A \subset \mathscr{A}$, then $A^c \in \mathscr{A}$ \\
+	\indent iii) if $A_1, A_2, ... \in \mathscr{A}$ then 
+	$\cup_{i=1}^{\infty} A_i \in \mathscr{A} $ \\
+	We call $\mathscr{A}$ a $\sigma$ - algebra (or $\sigma$ - field) \\
+	Any domain should be a $\sigma$ - field
+\end{mydef}
+
+\begin{mydef}
+	$(\textbf{S}, \mathscr{A}, P)$ is a (probability) measure space
+\end{mydef}
+
+\begin{mydef}
+	Given sample space $\textbf{S} (\neq \emptyset)$, and the 
+	measurable space $(\textbf{S}, \mathscr{A})$ \\
+	A function $P: \mathscr{A} \mapsto \mathbb{R}$ is called 
+	probability if it satisfies:
+	\begin{enumerate}
+		\item $P(A) \geq 0$ for any $A \in mathscr{A}$
+		\item $P(\textbf{S}) = 1$
+		\item if $A_1, A_2 ...$ are disjoint sets from $\mathscr{A}$,
+		then $P(\cup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)$
+	\end{enumerate}
+\end{mydef}
+
+%
+%End Lecture 3
+%
+
+\begin{mydef}
+	A collection of sets $\{E_1, E_2, ...\}$ is called a \textbf{partition} 
+		of event A if: \\
+	\indent i) $E_i \cap E_j = \emptyset, \: \forall \: i \neq j$ 
+		\textit{(pairwise disjoint)} \\
+  	\indent ii) $\cup_{i=1}^{\infty}E_i = A$ 
+		\textit{(exhaustive)}
+\end{mydef}
+
+\begin{mydef}
+	A sequence of events $\{A_1, A_2 ...\}$ is \textbf{increasing to event $A$} if: \\
+	\indent $A_1 \subset A_2 \subset ...$  \\
+	\indent and $A = \cup_{n=1}^{\infty} A_n$ \\
+	\indent Notation: $A_n \uparrow A$
+\end{mydef}
+
+\begin{mydef}
+	Similarly, $B_n \downarrow B$ if $B_1 \supset B_2 \supset ... $ and
+	$B = \cap_{n=1}^{\infty} B_n$ 
+\end{mydef}
+
+%
+%End Lecture 4
+%
+\begin{mydef}
+Counting Methods
+\begin{table}[h!]
+	\begin{tabular}{r|c|c}
+		& \textbf{WOR} & \textbf{WR} \\
+		\hline
+		
+		\textbf{Ordered} 
+		& $\displaystyle \frac{n!}{(n-r)!} $ 
+		& $\displaystyle n^r $ \\
+		
+		\textbf{Unordered} 
+		& $\displaystyle \frac{n!}{r!(n-r)!} 
+		= {n \choose r} $ 
+		& $\displaystyle {n+r-1 \choose r} $ \\
+	\end{tabular}
+\end{table}
+
+\end{mydef}
+
+%
+%End Lecture 5
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Results}
+\begin{enumerate}
+\item $(A^c)^c = A$
+\item $\textbf{S}^c = \emptyset $
+\item $ \emptyset^c = \textbf{S} $
+\item if $A \subset B$, then $B^c \subset A^c$
+\end{enumerate}
+
+%
+%End of Lecture 1
+%
+
+\begin{remark}
+	Proving Distributive Property: \\
+	$(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$ \\
+	
+	\begin{myproof}
+		Prove left direction: \\
+		$x \in (A \cup B) \cap C \Rightarrow x \in A \cup B$ and $x \in C$ \\
+		$\Rightarrow (x \in A$ or $x \in B)$ and $x \in C$ \\
+		$\Rightarrow (x \in A$ and $x \in C)$ 
+		or $(x \in A$ and $x \in C)$ or both \\
+		$\Rightarrow  x \in A \cap C$ or $x \in B \cap C$ or both \\
+		$\Rightarrow  x \in (A\cap C) \cup (B \cap C)$ \\
+		Right direction is reverse of above.
+	\end{myproof}
+\end{remark}
+
+\begin{enumerate}
+	\item $A \cap B \subset A$ and $A \cap B \subset B$
+	\item $A \cap A = A$
+	\item if $A \subset B $ then $A \cap B = A $
+	\item $A \subset A \cup B$ and $B \subset A \cup B$
+	\item $A \cup A = A$
+	\item if $ A \subset B$ then $A \cup B = B$
+	\item $A \cup A^c = \textbf{S}$ and $A \cap A^c = \emptyset$
+	\item if $A \subset C$ and $B \subset C$ 
+	then $A \cap B \subset A \cup B \subset C$
+	\item $\emptyset$ is disjoint to all events
+	\item if $a \cap B = \emptyset$ then $A \subset B^c$
+	and $B \subset A^c$
+	\item if $A \subset B$, then $B^c \subset A^c$
+	\item $A \setminus B = A \cap B^c$ and $B \setminus A = A^c \cap B$
+	\item $A \triangle B = (A \cup B) \setminus (A \cap B) $
+\end{enumerate}
+
+%
+%End of lecture 2
+%
+
+\begin{remark}
+	Consider $\textbf{S} = \{H, T\}$ and $\mathscr{P}(\textbf{S}) = \{\emptyset, 
+	\{H\}, \{T\}, \textbf{S} \}$ \\
+	\indent If \textbf{S} is countable, we can take $\mathscr{P}(\textbf{S}) $
+	as the domain for probability function P.  \\
+	\indent However, if \textbf{S} is uncountable, then \textbf{S} is too large, 
+	and it is not possible to define a function for $\mathscr{P}(\textbf{S}) $
+\end{remark}
+
+\begin{remark}
+\textbf{Desired Properties of P(.)}
+\begin{enumerate}
+	\item $P(\emptyset) = 0$
+	\item If $A$ and $B$ are disjoint then $P(A \cup B) = P(A) + P(B)$
+	\item $P(A^c) = 1- P(A)$
+	\item If $A \subset B$ then $P(A) \leq P(B)$
+	\item $P(A) \leq 1$
+\end{enumerate}
+\end{remark}
+
+%
+%End Lecture 3
+%
+
+\begin{remark}
+	Partition $\{E_1, \: ..., \: E_n \}$ is a finite partition
+\end{remark}
+
+\begin{remark}
+	For \textbf{S}, $\{A, A^c\}$ is a partition
+\end{remark}
+
+\begin{remark}
+	If $E_n: n \geq 1$ is a partition of $A$, then $P(A) = \sum_{i=1}^{\infty} P(E_i)$
+\end{remark}
+
+\begin{enumerate}
+	\item Suppose $A$ and $B$ are two events.  Then $\{A \cap B, A^c \cap B\}$
+	is a partition of $B$.  Also, $P(A^c \cap B) = P(B) - P(A \cap B)$ 
+
+	\begin{myproof}
+		$(A \cap B) \cap (A^c \cap B) = 
+		(A \cap A^c) \cap (B \cap B) = 0$  \textit{(pairwise disjoint)} \\
+		$(A \cap B) \cup (A^c \cap B) = (A \cup A^c) \cap B = B $ 
+		\textit{(exhaustive)} 
+	\end{myproof}
+
+	\item $A$ and $B$ are two events.  $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ \\
+	(This is the generalized version of b)) 
+
+	\item if $\{C_1, C_2, ... \}$ is a partition of \textbf{S}, then \\
+	$P(A) = \sum_{i=1}^{\infty} P(A \cap C_i)$ 
+
+	\item\textbf{Boole's Inequality} \\
+	\indent $P(\cup_{i=1}^{\infty} A_i) \leq \sum_{i=1}^{\infty}P(A_i)$ 
+	
+	\item \textbf{Bonferroni's Inequality}\\
+	$P(\cap_{i=1}^{\infty} A_i) \geq 1 - \sum_{i=1}^{\infty} P(A_i^c)$
+\end{enumerate}
+
+\begin{remark}
+	Proving Bonferroni from Boole: \\
+	$P(\cup_{i=1}^{\infty} A_i^c) 
+	\leq \sum_{i=1}^{\infty} P(A_i^c)$ \\
+	$1- P(\cup_{i=1}^{\infty} A_i^c) \:  
+	\geq 1 - \sum_{i=1}^{\infty} P(A_i^c)$ \\
+	$ = P[(\cup_{i=1}^{\infty} A_i^c)^c] \: 
+	\geq$ ...  \\
+	$ = P[\cap_{i=1}^{\infty} (A_i^c)^c] \: 
+	\geq$ ... \\
+	$ = P(\cap_{i=1}^{\infty} A_i ) \: 
+	\geq 1- \sum_{i=1}^{\infty} P(A_i^c)$ 
+\end{remark}
+
+\begin{enumerate}
+	\item If $A_n \uparrow A$, then $P(A) = \lim_{n \to \infty} P(A_n)$ 
+
+	\item If $B_n \downarrow B$ then $P(B) = \lim_{n \to \infty} P(B_n)$ 
+\end{enumerate}
+
+%
+%End Lecture 4
+%
+
+\begin{remark}
+	Suppose for some set $A, P(A) = 1$ Does this imply $A=S$? \\
+	Does $P(B) = 0$ imply $B \neq \emptyset$? \\
+	Does $P(A \cap B) = 0$ imply $A,B$ are disjoint? \\
+	Not necessarily for all above! 
+\end{remark}
+
+%
+%End Lecture 5
+%
+
+
+
+
 
 
 

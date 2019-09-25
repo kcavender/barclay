@@ -1,0 +1,39 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"2","Warning messages:
+"
+"2","1: "
+"2","In doTryCatch(return(expr), name, parentenv, handler) :"
+"2","
+ "
+"2"," display list redraw incomplete
+"
+"2","2: "
+"2","In doTryCatch(return(expr), name, parentenv, handler) :"
+"2","
+ "
+"2"," invalid graphics state
+"
+"2","3: "
+"2","In doTryCatch(return(expr), name, parentenv, handler) :"
+"2","
+ "
+"2"," invalid graphics state
+"
+"2","4: "
+"2","In doTryCatch(return(expr), name, parentenv, handler) :"
+"2","
+ "
+"2"," display list redraw incomplete
+"
+"2","5: "
+"2","In doTryCatch(return(expr), name, parentenv, handler) :"
+"2","
+ "
+"2"," invalid graphics state
+"
+"2","6: "
+"2","In doTryCatch(return(expr), name, parentenv, handler) :"
+"2","
+ "
+"2"," invalid graphics state
+"

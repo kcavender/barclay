@@ -7,12 +7,28 @@
 \maketitle
 
 \section{Review}
-More on Counting.  Counting methods table
+\begin{table}[h!]
+	\begin{center}
+		\begin{tabular}{r|c|c}
+			& \textbf{WOR} & \textbf{WR} \\
+			\hline
+			
+			\textbf{Ordered} 
+			& $\displaystyle \frac{n!}{(n-r)!} $ 
+			& $\displaystyle n^r $ \\
+			
+			\textbf{Unordered} 
+			& $\displaystyle \frac{n!}{r!(n-r)!} 
+			= {n \choose r} $ 
+			& $\displaystyle {n+r-1 \choose r} $ \\
 
+		\end{tabular}
+	\end{center}
+\end{table}
 
 
 \section{Class Notes}
-Lots of Examples.
+Lots of Examples that I will not be including here
 
 \begin{mydef}
 	If $A,B$ are two events with $P(B) > 0$, then the 
@@ -24,7 +40,8 @@ Lots of Examples.
 \end{mydef}
 \begin{mydef}
 	If $E_1, E_2, ..., E_n$ are events, \\
-	$P(E_1 \cap E_2 \cap ... \cap E_n) = P(E_1)P(E_2 | E_1)P(E_3|E_1 \cap E_2)
+	$P(E_1 \cap E_2 \cap ... \cap E_n) 
+	= P(E_1)P(E_2 | E_1)P(E_3|E_1 \cap E_2)
 	... P(E_n|E_1 \cap E_2 \cap E_3 \cap ... \cap E_{n-1})$
 \end{mydef}
 

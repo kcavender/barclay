@@ -1,0 +1,62 @@
+---
+title: "STT 863 HW1"
+author: "Kenyon Cavender"
+date: "9/24/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is Kenyon Cavender's homework for STT 863.
+
+```{r diam}
+library(MASS)
+diam <- read.table(file="DBH.txt", header=TRUE)
+
+#Part A
+hist(diam$diameter)
+
+#The histogram diminishes towards the left. Most of the trees are between 0 and 50 cm.
+
+#Part B
+boxplot(diam$diameter, main= "Tree Diameter at Breast Height", xlab="Diameter in CM", horizontal=TRUE)
+
+#This boxplot does not seem to show any outliers.
+
+#Part C
+summary(diam$diameter)
+
+#Part D
+sample_mean <- mean(diam$diameter)
+std_dev <- sd(diam$diameter)
+samp_size <- length(diam$diameter)
+
+print(std_dev)
+t.test(diam$diameter)
+
+#Part E
+t.test(diam$diameter, alternative = "less", mu=30, conf.level = .9)
+
+#Part F
+qt(.995, df=39) * std_dev/sqrt(1+1/samp_size)
+
+#below was another attempt
+#predict(diam$diameter, interval="prediction", level=0.99)
+
+
+error <- qt(.975, df=samp_size-1)*std_dev*sqrt(1+1/samp_size)
+left = sample_mean-error
+right = sample_mean+error
+left
+right
+
+#Part G
+qqnorm(diam$diameter, main= "Tree Diameter at Breast Height", ylab="Diameter in CM")
+qqline(diam$diameter)
+```
+
+

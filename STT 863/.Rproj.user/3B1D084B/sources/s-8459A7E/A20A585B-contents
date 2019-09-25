@@ -1,0 +1,27 @@
+library(MASS)
+diam <- read.table(file="DBH.txt", header=TRUE)
+
+hist(diam$diameter)
+boxplot(diam$diameter, main= "Tree Diameter at Breast Height", xlab="Diameter in CM", horizontal=TRUE)
+summary(diam$diameter)
+
+sample_mean <- mean(diam$diameter)
+std_dev <- sd(diam$diameter)
+samp_size <- length(diam$diameter)
+
+t.test(diam$diameter)
+
+t.test(diam$diameter, alternative = "less", mu=30, conf.level = .9)
+
+qt(.995, df=39) * std_dev/sqrt(1+1/samp_size)
+
+#predict(diam$diameter, interval="prediction", level=0.99)
+
+error <- qt(.975, df=samp_size-1)*std_dev*sqrt(1+1/samp_size)
+left = sample_mean-error
+right = sample_mean+error
+left
+right
+
+qqnorm(diam$diameter, main= "Tree Diameter at Breast Height", ylab="Diameter in CM")
+qqline(diam$diameter)
