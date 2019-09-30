@@ -1,4 +1,4 @@
-\documentclass[12pt, oneside, letterpaper]{notes}
+\documentclass[14pt, oneside, letterpaper]{notes}
 
 \begin{document}
 \title{STT 861 Compendium}
@@ -190,6 +190,66 @@ Counting Methods
 %End Lecture 5
 %
 
+\begin{mydef}
+	\textbf{Conditional Probability} - if two events 
+	$A$, $B$ with $P(B) >= 0$, then the conditional 
+	probability of $A|B$ is $P(A|B) = \frac{P(A\cap B)}
+	{P(B)}$ \\
+	If $P(B) = 0$, $P(A|B)$ is undefined \\
+	$P(A \cap B) = P(A)P(A|B) = P(B)P(B|A)$ \\
+\end{mydef}
+
+\begin{mydef}
+	\textbf{Multiplication Rule} - 
+	If $E_1$, $E_2$, ... $E_n$ are events, \\ 
+	$P(E_1 \cap E_2 \cap ... \cap E_n) = 
+	P(E_1)P(E_2|E_1)P(E_3|E_1\cap E_2)$...
+	$P(E_n|E_1 \cap$ ...$ \cap E_{n-1})$
+\end{mydef}
+
+%
+%End Lecture 6
+%
+
+\begin{mydef}
+	\textbf{Bayes' Rule} \\
+	If ${E_1, E_2 ... E_n}$ is partition of $S$ then \\
+	\[ P(E_i|A) = \frac{P(E_i)P(A|E_i)}
+	{\sum_{j=1}^{n}P(E_j)P(A|E_j)} \]
+\end{mydef}
+
+\begin{mydef}
+	Two events $A$, $B$ are \textbf{Independent} if
+	$P(A \cap B) = P(A)P(B)$ \\
+	This is equivalent to $P(A|B) = P(A)$ and 
+	$P(B) = P(B|A)$
+\end{mydef}
+
+\begin{mydef}
+	A collection of events $A_1, A_2, ..., A_n$ are 
+	\textbf{mutually independent} if for any subcollection
+	$A_{i1}, ..., A_{ik}$, we have:
+	\[ P(\cap_{j=1}^k A_{i_j}) = \prod_{j=1}^k P(A_{i_j}) \]
+\end{mydef}
+
+
+%
+%End Lecture 7
+%
+
+\begin{mydef}
+	A \textbf{random variable} $X$ is a measurable real 
+	valued function defined on the sample space 
+	$X : S \mapsto \mathbb{R}$
+\end{mydef}
+
+\begin{mydef}
+	A function F is called the cumulative distribution
+	function
+\end{mydef}
+
+
+
 
 
 
@@ -344,12 +404,33 @@ Counting Methods
 \end{remark}
 
 %
-%End Lecture 5
+%End Lecture 5 and 6
 %
 
 
+\begin{enumerate}
+\item $P(A^c|B) = 1 - P(A|B)$
+\item If $A \subseteq B$ the $P(A|B) = \frac{P(A)}{P(B)}$
+	and $P(B|A) = 1$
+\item If ${E_1, E_2 ... E_n}$ is partition of $S$ then \\
+	$P(E_i|A) = \frac{P(E_i)P(A|E_i)}
+	{\sum_{j=1}^{n}P(E_j)P(A|E_j)}$
+\end{enumerate}
 
+\begin{remark}
+	If $A$, $B$ are disjoint, then $A$, $B$ are independent if
+	either $P(A)=0$, $P(B)=0$ or both.
+\end{remark}
 
+\begin{remark}
+	If $A$ and $B$ are independent events, then the 
+	following pairs are also independent:
+	\begin{enumerate}
+		\item $A$ and $B^c$
+		\item $A^c$ and $B$
+		\item $A^c$ and $B^c$
+	\end{enumerate}
+\end{remark}
 
 
 

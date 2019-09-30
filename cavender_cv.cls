@@ -3,7 +3,7 @@
 \ProvidesClass{cavender_cv}[2019/07/14 My custom CV class]
 \RequirePackage{titlesec}
 
-\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
+\usepackage[hmargin=2.5cm, vmargin=2.5cm]{geometry}
 
 \titleformat{\section}
   {\Large\scshape\raggedright}
