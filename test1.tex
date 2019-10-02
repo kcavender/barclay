@@ -1,0 +1,358 @@
+\documentclass[14pt, oneside, letterpaper]{notes}
+\usepackage{mathtools}
+
+\begin{document}
+\title{STT 861 Compendium}
+\author{Kenyon Cavender}
+\maketitle
+
+\section*{Definitions}
+\begin{mydef}
+  Suppose A and B are two sets.  $A \subset B$ (A is a 
+  \textbf{subset} of B) if $x \in A$ implies $x \in B$. 
+  If $A \subset B$ and $B \subset A$ then $A=B$.
+\end{mydef}
+
+\begin{mydef}
+  A and B are \textbf{disjoint} if $A \cap B = \emptyset$
+\end{mydef}
+
+\begin{remark}
+	Suppose for some set $A, P(A) = 1$ Does this imply $A=S$? \\
+	Does $P(B) = 0$ imply $B \neq \emptyset$? \\
+	Does $P(A \cap B) = 0$ imply $A,B$ are disjoint? \\
+	Not necessarily for all above! 
+\end{remark}
+
+%work on fixing this formatting
+\noindent \underline{\textbf{Properties of set theory}}  \\
+\textbf{Commutative}  \\
+\indent $A \cup B = B \cup A$ and $A \cap B = B \cap A$ \\
+\textbf{Associative}\\
+\indent $(A \cup B) \cup C = A \cup (B \cup C) =: A \cup B \cup C$ \\
+\indent $(A \cap B) \cap C = A \cap (B \cap C) =: A \cap B \cap C$ \\
+\textbf{Distributive}\\
+\indent $(A \cup B) \cap C = (A \cap C) \cup (B \cap C)$ \\
+\indent $(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$ \\
+\textbf{De Morgan's Law}\\
+\indent $(A \cup B)^c = A^c \cap B^c$ \\
+\indent $(A \cap B)^c = A^c \cup B^c$ 
+
+\begin{mydef}
+  \textbf{Set Difference}\\
+  \indent $A \setminus B = \{x: x \in A$, but $x \notin B \}$
+\end{mydef}
+
+%\begin{mydef}
+%  \textbf{Symmetric Difference}\\
+%  \indent $A \triangle B = \{x: x \in A \setminus B$, or 
+%  $x \in B \setminus A \}$
+%\end{mydef}
+
+%
+%End of lecture 2
+%
+
+\begin{mydef}
+	$\mathscr{A}$ is a collection of subsets of $\textbf{S}[\neq \emptyset]$
+	satisfying: \\
+	\indent i) $\textbf{S} \in \mathscr{A}$ \\
+	\indent ii) if $ A \subset \mathscr{A}$, then $A^c \in \mathscr{A}$ \\
+	\indent iii) if $A_1, A_2, ... \in \mathscr{A}$ then 
+	$\cup_{i=1}^{\infty} A_i \in \mathscr{A} $ \\
+	We call $\mathscr{A}$ a $\sigma$ - algebra (or $\sigma$ - field) \\
+	Any domain should be a $\sigma$ - field
+\end{mydef}
+
+\begin{mydef}
+	Given sample space $\textbf{S} (\neq \emptyset)$, and the 
+	measurable space $(\textbf{S}, \mathscr{A})$ \\
+	A function $P: \mathscr{A} \mapsto \mathbb{R}$ is called 
+	probability if it satisfies:
+	\begin{enumerate}
+		\item $P(A) \geq 0$ for any $A \in \mathscr{A}$
+		\item $P(\textbf{S}) = 1$
+		\item if $A_1, A_2 ...$ are disjoint sets from $\mathscr{A}$,
+		then $P(\cup_{i=1}^{\infty} A_i) = \sum_{i=1}^{\infty} P(A_i)$
+	\end{enumerate}
+\end{mydef}
+
+\begin{remark}
+\textbf{Desired Properties of P(.)}
+\begin{enumerate}
+	\item $P(\emptyset) = 0$
+	\item If $A$ and $B$ are disjoint then $P(A \cup B) = P(A) + P(B)$
+	\item $P(A^c) = 1- P(A)$
+	\item If $A \subset B$ then $P(A) \leq P(B)$
+	\item $P(A) \leq 1$
+\end{enumerate}
+\end{remark}
+
+%
+%End Lecture 3
+%
+
+\begin{mydef}
+	A collection of sets $\{E_1, E_2, ...\}$ is called a \textbf{partition} 
+		of event A if: \\
+	\indent i) $E_i \cap E_j = \emptyset, \: \forall \: i \neq j$ 
+		\textit{(pairwise disjoint)} \\
+  	\indent ii) $\cup_{i=1}^{\infty}E_i = A$ 
+		\textit{(exhaustive)}
+\end{mydef}
+
+\begin{enumerate}
+	\item Suppose $A$ and $B$ are two events.  Then $\{A \cap B, A^c \cap B\}$
+	is a partition of $B$.  Also, $P(A^c \cap B) = P(B) - P(A \cap B)$ 
+
+	\begin{myproof}
+		$(A \cap B) \cap (A^c \cap B) = 
+		(A \cap A^c) \cap (B \cap B) = 0$  \textit{(pairwise disjoint)} \\
+		$(A \cap B) \cup (A^c \cap B) = (A \cup A^c) \cap B = B $ 
+		\textit{(exhaustive)} 
+	\end{myproof}
+
+	\item $A$ and $B$ are two events.  $P(A \cup B) = P(A) + P(B) - P(A \cap B)$ \\
+	(This is the generalized version of b)) 
+
+	\item if $\{C_1, C_2, ... \}$ is a partition of \textbf{S}, then \\
+	$P(A) = \sum_{i=1}^{\infty} P(A \cap C_i)$ 
+
+	\item\textbf{Boole's Inequality} \\
+	\indent $P(\cup_{i=1}^{\infty} A_i) \leq \sum_{i=1}^{\infty}P(A_i)$ 
+	
+	\item \textbf{Bonferroni's Inequality}\\
+	$P(\cap_{i=1}^{\infty} A_i) \geq 1 - \sum_{i=1}^{\infty} P(A_i^c)$
+\end{enumerate}
+
+\begin{enumerate}
+	\item If $A_n \uparrow A$, then $P(A) = \lim_{n \to \infty} P(A_n)$ 
+
+	\item If $B_n \downarrow B$ then $P(B) = \lim_{n \to \infty} P(B_n)$ 
+\end{enumerate}
+
+\begin{mydef}
+	A sequence of events $\{A_1, A_2 ...\}$ is \textbf{increasing to event $A$} if: \\
+	\indent $A_1 \subset A_2 \subset ...$  \\
+	\indent and $A = \cup_{n=1}^{\infty} A_n$ \\
+	\indent Notation: $A_n \uparrow A$
+\end{mydef}
+
+\begin{mydef}
+	Similarly, $B_n \downarrow B$ if $B_1 \supset B_2 \supset ... $ and
+	$B = \cap_{n=1}^{\infty} B_n$ 
+\end{mydef}
+
+\begin{enumerate}
+\item $P(A^c|B) = 1 - P(A|B)$
+\item If $A \subseteq B$ the $P(A|B) = \frac{P(A)}{P(B)}$
+	and $P(B|A) = 1$
+\item If ${E_1, E_2 ... E_n}$ is partition of $S$ then \\
+	$P(E_i|A) = \frac{P(E_i)P(A|E_i)}
+	{\sum_{j=1}^{n}P(E_j)P(A|E_j)}$
+\end{enumerate}
+
+%
+%End Lecture 4
+%
+\begin{mydef}
+Counting Methods
+\begin{table}[h!]
+	\begin{tabular}{r|c|c}
+		& \textbf{WOR} & \textbf{WR} \\
+		\hline
+		
+		\textbf{Ordered} 
+		& $\displaystyle \frac{n!}{(n-r)!} $ 
+		& $\displaystyle n^r $ \\
+		
+		\textbf{Unordered} 
+		& $\displaystyle \frac{n!}{r!(n-r)!} 
+		= {n \choose r} $ 
+		& $\displaystyle {n+r-1 \choose r} $ \\
+	\end{tabular}
+\end{table}
+
+\end{mydef}
+
+%
+%End Lecture 5
+%
+
+\begin{mydef}
+	\textbf{Conditional Probability} - if two events 
+	$A$, $B$ with $P(B) >= 0$, then the conditional 
+	probability of $A|B$ is \[P(A|B) = \frac{P(A\cap B)}
+	{P(B)}\] \\
+	If $P(B) = 0$, $P(A|B)$ is undefined \\
+	$P(A \cap B) = P(A)P(A|B) = P(B)P(B|A)$ \\
+\end{mydef}
+
+\begin{mydef}
+	\textbf{Multiplication Rule} - 
+	If $E_1$, $E_2$, ... $E_n$ are events, \\ 
+	$P(E_1 \cap E_2 \cap ... \cap E_n) = 
+	P(E_1)P(E_2|E_1)P(E_3|E_1\cap E_2)$...
+	$P(E_n|E_1 \cap$ ...$ \cap E_{n-1})$
+\end{mydef}
+
+%
+%End Lecture 6
+%
+
+\begin{mydef}
+	\textbf{Bayes' Rule} \\
+	If ${E_1, E_2 ... E_n}$ is partition of $S$ then \\
+	\[ P(E_i|A) = \frac{P(E_i)P(A|E_i)}
+	{\sum_{j=1}^{n}P(E_j)P(A|E_j)} \]
+\end{mydef}
+
+\begin{mydef}
+	Two events $A$, $B$ are \textbf{Independent} if
+	$P(A \cap B) = P(A)P(B)$ \\
+	This is equivalent to $P(A) = P(A|B)$ and 
+	$P(B) = P(B|A)$
+\end{mydef}
+
+\begin{mydef}
+	A collection of events $A_1, A_2, ..., A_n$ are 
+	\textbf{mutually independent} if for any subcollection
+	$A_{i1}, ..., A_{ik}$, we have:
+	\[ P(\cap_{j=1}^k A_{i_j}) = \prod_{j=1}^k P(A_{i_j}) \]
+\end{mydef}
+
+\begin{remark}
+	If $A$, $B$ are disjoint, then $A$, $B$ are independent if
+	either $P(A)=0$, $P(B)=0$ or both.
+\end{remark}
+
+\begin{remark}
+	If $A$ and $B$ are independent events, then the 
+	following pairs are also independent:
+	\begin{enumerate}
+		\item $A$ and $B^c$
+		\item $A^c$ and $B$
+		\item $A^c$ and $B^c$
+	\end{enumerate}
+\end{remark}
+
+
+%
+%End Lecture 7
+%
+
+\begin{mydef}
+	A \textbf{random variable} $X$ is a measurable real 
+	valued function defined on the sample space 
+	$X : S \mapsto \mathbb{R}$
+\end{mydef}
+
+\begin{mydef}
+	A function F is called the cumulative distribution
+	function iff: 
+	\begin{enumerate}
+	\item $lim_{x \to -\infty}F(x)=0$ and $lim_{x \to \infty}=1$
+	\item $F(x)$ is a nondecreasing fn of x
+	\item $F(x)$ is right-continuous; that is for every number 
+	$x_0, lim_{x \downarrow x_0} F(x) = F(x_0)$
+	\end{enumerate}
+\end{mydef}
+
+\begin{mydef}
+	A PMF of a discrete r.v. x is $f_X(x)=P_X(X=x)$:
+	\begin{enumerate}
+	\item $0 \leq f_X(x) \leq 1 \: \: \forall \: x$
+	\item $\sum_X f_X(x) = 1$
+	\end{enumerate}
+\end{mydef}
+
+\begin{mydef}
+	A PDF of a continuous r.v. x is $f_X(x)= \frac{d}{dx}F_X(x)$:
+	\begin{enumerate}
+	\item $f_X(x) \geq 0 \: \: \forall \: x$
+	\item $\int_{-\infty}^{\infty}f_X(x)dx = 1$
+	\item $F_X(x) = \int_{-\infty}^{x}f_X(s)ds $
+	\end{enumerate}
+\end{mydef}
+
+\begin{remark}
+	\textbf{Theorem 2.1.3} Let X have cdf $F_X(x)$, let $Y = g(X)$,
+	and let $\mathscr{X}$ and $\mathscr{Y}$ be defined.
+	\begin{enumerate}
+	\item if g is an increasing fn on $\mathscr{X}$, $F_Y(y) = 
+	F_X(g^{-1}(y)) $ for $y \in \mathscr{Y}$
+	\item if g is a decreasing fn on $\mathscr{X}$ and X is
+	a continuous r.v., $F_Y(y) = 1- F_X(g^{-1}(y)) $ for 
+	$y \in \mathscr{Y}$
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	\textbf{Theorem 2.1.5} Let $X$ have pdf $f_X(x)$ and let $Y = g(x)$,
+	where $g$ is a monotone fn.  Let $\mathscr{X}$ and $\mathscr{Y}$ be
+	defined.  Suppose that $f_X(x)$ is continuous on $\mathscr{X}$ and
+	that $g^{-1}(y)$ has continuous derivative on $\mathscr{Y}$. Then
+	the pdf of $Y$ is given by:
+	\[ f_Y(y) =  
+		\begin{dcases}
+			f_X(g^{-1}(y)) \left| \frac{d}{dy}g^{-1}(y)\right| 
+			& y \in \mathscr{Y} \\
+			0 & otherwise
+		\end{dcases}	
+	\]
+	
+\end{remark}
+
+\begin{remark}
+	\textbf{Theorem 2.1.8} Let $X$ have pdf $f_X(x)$ and let $Y = g(x)$, 
+	and define sample space $\mathscr{X}$.  Suppose there exists a 
+	partition $A_0, A_1, ..., A_k$ of $\mathscr{X}$ such that
+	$P(X \in A_0)=0$ and $f_X(x)$ is continuous on each $A_i$.  Further,
+	suppose there exist functions $g_1(x),...,g_k(x)$ defined on 
+	$A_1,...,A_k$, respectively, satisfying
+	\begin{enumerate}
+		\item $g(x) = g_i(x)$ for $x \in A_i$
+		\item $g_i(x)$ is monotone on $A_i$
+		\item the set $\mathscr{Y} = {y: y=g_i(x) for some x \in A_i}$
+		is the same for each $i=1,...,k)$
+		\item $g_i^{-1}(y)$ has a continuous derivative on $\mathscr{Y}$,
+		for each $i=1,...,k$ \\
+		Then:
+	\end{enumerate}
+	\[ f_Y(y) =  
+		\begin{dcases}
+			\sum_{i=1}^{k}f_X(g_i^{-1}(y)) \left| 
+			\frac{d}{dy}g_i^{-1}(y)\right| 
+			& y \in \mathscr{Y} \\
+			0 & otherwise
+		\end{dcases}	
+	\]
+	
+\end{remark}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
