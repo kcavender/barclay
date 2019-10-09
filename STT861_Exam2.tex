@@ -1,0 +1,84 @@
+\documentclass[14pt, oneside, letterpaper]{notes}
+\usepackage{mathtools}
+
+\begin{document}
+\title{STT 861 Compendium - Part Two}
+\author{Kenyon Cavender}
+\maketitle
+
+\section*{Expected Values}
+
+\begin{mydef}
+	The \textbf{expected value} of a random variable $g(X)$: \\
+	\[
+	\mathbb{E}(g(X)) = 
+		\begin{dcases}
+			\int_{-\infty}^{\infty} g(x)f_X(x)dx 
+			& \text{if $X$ is continuous} \\			
+			\sum_{X}g(x)f_X(x)
+			& \text{if $X$ is discrete}
+		\end{dcases}
+	\]
+\end{mydef}
+
+\begin{remark}
+If $-\infty \leq \mathbb{E}(g(x)) \leq \infty$ we say the
+expectation of $g(x)$ exists.  Else it does not exist. \\
+\indent notation: $\left| \mathbb{E}(g(x)) \right| 
+\leq \infty$ \\
+\indent In particular, if $g(x) = x$, then we get the expected
+value of $X$: \\
+	\[
+	\mathbb{E}(g(X)) = 
+		\begin{dcases}
+			\int xf_X(x)dx 
+			& \text{if $X$ is continuous} \\			
+			\sum xf_X(x)
+			& \text{if $X$ is discrete}
+		\end{dcases}
+	\]
+\indent This is called the \textbf{mean} of r.v. $X$ \\
+\indent Also denoted by $\mu$ or $\mu_X$
+\end{remark}
+
+\begin{remark} \textbf{Theorem} \\
+\begin{enumerate}
+	\item $\mathbb{E}(ag(x) + b) = a\mathbb{E}(g(x)) + b
+		\text{$a$,$b$ real constants}$
+	\item $\text{If} g(x) \geq 0 \text{for all} x \in 
+		\mathbb{R} \text{, then} \mathbb{E}(g(x)) \geq 0$
+	\item $\text{If} g_1(x) \geq g_2(x) \text{for all} 
+		x \in \mathbb{R} \text{, then} 
+		\mathbb{E}(g_1(x)) \geq \mathbb{E}(g_2(x))$
+	\item For any real constants $a$,$b$ if $a \leq X 
+		\leq b$ then $a \leq \mathbb{E}(X) \leq b$
+
+\end{enumerate}
+\end{remark}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
