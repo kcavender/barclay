@@ -41,7 +41,7 @@ value of $X$: \\
 \indent Also denoted by $\mu$ or $\mu_X$
 \end{remark}
 
-\begin{remark} \textbf{Theorem} \\
+\begin{theorem} Expectation 
 \begin{enumerate}
 	\item $\mathbb{E}(ag(x) + b) = a\mathbb{E}(g(x)) + b
 		\text{$a$,$b$ real constants}$
@@ -51,11 +51,58 @@ value of $X$: \\
 		x \in \mathbb{R} \text{, then} 
 		\mathbb{E}(g_1(x)) \geq \mathbb{E}(g_2(x))$
 	\item For any real constants $a$,$b$ if $a \leq X 
-		\leq b$ then $a \leq \mathbb{E}(X) \leq b$
-
+		\leq b$ then $a < \mathbb{E}(X) < b$
 \end{enumerate}
+\end{theorem}
+
+\begin{remark} Expectation
+	\begin{enumerate}
+	\item If $g$ is a linear fn, $\mathbb{E}[g(x)] =
+	g[\mathbb{E}(x)]$
+	\item $g(x)$ has finite expectation if
+	$0 \leq \mathbb{E}[\left| g(x) \right|] \le \infty $
+	\end{enumerate}
 \end{remark}
 
+
+\section*{Moments}
+\begin{mydef}
+	\textbf{Moments} For a r.v. $X$, we define the $r^{th}$
+	raw moments by 
+	\[ 
+		\mu'_r = 
+		\begin{dcases}
+			\int x'f_X(x)dx 
+			& \text{if $X$ is continuous} \\			
+			\sum x'f_X(x)
+			& \text{if $X$ is discrete}
+		\end{dcases}
+	\]
+	$\mu'_1 = \mathbb{E}(x') = \mathbb{E}(x) = \mu$
+\end{mydef}
+
+\begin{mydef}
+	The $r^{th}$ central moment is defined as 
+	$\mu_r = \mathbb{E}[(x-\mu)^r] $
+\end{mydef}
+
+\begin{theorem} 2.3.11 \\
+Let $F_X(x)$ and $F_Y(y)$ be two cdfs all of whose moments
+exist.  If $X$, $Y$ have bounded support \\
+(i.e. Support$(f_X) = \{x: f_X(x)=0 \}$) \\
+Then $F_X(u) = F_Y(u) \: \forall \: u$ iff $\mathbb{E}(x')
+= \mathbb{E}(y') \: \forall \: r \in \mathbb{Z}$ \\
+Example: P(Heads) for a coin flip and P(Even) for a die
+roll have the same distribution, but are different variables.
+\end{theorem}
+
+\begin{mydef}
+\textbf{Moment Generating Function}: For a r.v. $X$,
+the mgf is defined as: $M_X(t) = \mathbb{E}(e^{tx})$ 
+provided the expectation exists for all t in a neighborhood
+of 0.  I.e. $\mathbb{E} < \infty \: \forall \: t \in
+(-h,h) \text{for some} h>0$
+\end{mydef}
 
 
 \end{document}

@@ -29,9 +29,12 @@
 
 \newtheorem*{mydef}{\underline{Def}}
 \newtheorem*{remark}{Remark}
+\newtheorem*{theorem}{Theorem}
 
 \theoremstyle{indented}
 \newtheorem*{myproof}{\textit{Proof}}
+
+
 
 \usepackage{xpatch}
 \makeatletter
