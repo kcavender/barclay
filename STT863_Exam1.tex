@@ -1,0 +1,403 @@
+\documentclass[14pt, oneside, letterpaper, fleqn]{notes}
+\usepackage{mathtools}
+
+\begin{document}
+\title{STT 863 Compendium}
+\author{Kenyon Cavender}
+\maketitle
+
+\section*{Baseline Knowledge}
+
+\begin{mydef}
+\textbf{Boole's inequality} \\
+\[
+P(\cup_{i=1}^n A_i ) \leq \sum_{i=1}^n P(A_i)  
+\]
+\end{mydef}
+
+\begin{mydef}
+\textbf{Bonferroni's inequality} \\
+\[ 
+P(\cap_{i=1}^n A_i ) \geq 1- \sum_{i=1}^n P(A_i^c) 
+\]
+\end{mydef}
+
+\begin{mydef}
+	A function F is called the cumulative distribution
+	function iff: 
+	\begin{enumerate}
+	\item $lim_{x \to -\infty}F(x)=0$ and $lim_{x \to \infty}=1$
+	\item $F(x)$ is a nondecreasing fn of x
+	\item $F(x)$ is right-continuous; that is for every number 
+	$x_0, lim_{x \downarrow x_0} F(x) = F(x_0)$
+	\end{enumerate}
+\end{mydef}
+
+\begin{mydef}
+	A PDF of a continuous r.v. x is $f_X(x)= \frac{d}{dx}F_X(x)$:
+	\begin{enumerate}
+	\item $f_X(x) \geq 0 \: \: \forall \: x$
+	\item $\int_{-\infty}^{\infty}f_X(x)dx = 1$
+	\item $F_X(x) = \int_{-\infty}^{x}f_X(s)ds $
+	\end{enumerate}
+\end{mydef}
+
+For below, change integrals to sums if the r.v is discrete
+\begin{mydef}
+\textbf{Expectation} \\
+\[
+\mu := \mathbb{E}(X) = \int_{-infty}^{\infty}xf(x)dx
+\] 
+For any function $h$:\\
+\[
+\mathbb{E}(h(X)) = \int_{-infty}^{\infty}h(x)f(x)dx
+\]
+\end{mydef}
+
+\begin{mydef}
+\textbf{Variance} \\
+\[
+\sigma^2(X):= \mathbb{E}((X-\mu)^2) =
+\mathbb{E}(X^2) - \{\mathbb{E}(X)\}^2
+\]
+\end{mydef}
+
+%Do I need the pdf of the normal distribution?
+
+\begin{mydef}
+\textbf{Normal Distribution} $X \sim N(\mu, \sigma^2)$ \\
+PDF: 
+\[
+f(x) = \frac{1}{\sqrt{2\pi}\sigma}
+e^{-\frac{(x-\mu)^2}{2\sigma^2}} 
+\text{,  }  -\infty < x < \infty
+\]
+\end{mydef}
+
+%
+%End slide deck 1
+%
+
+\begin{mydef}
+\textbf{Covariance} is a measure of a linear relationship 
+between $X$ and $Y$.  \\
+$Cov(X,Y) = \mathbb{E}(XY)-\mathbb{E}(X)\mathbb{E}(Y)$
+\end{mydef}
+
+\begin{mydef}
+\textbf{Correlation coefficient} between $X$ and $Y$
+is defined as:  \\
+$\rho = Corr(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}$
+\end{mydef}
+
+%
+%End slide deck 2
+%
+%
+%End slide deck 3
+%
+
+\section*{Statistical Inference}
+
+\begin{mydef}
+\textbf{Sample Mean} 
+\[
+\bar{Y} = \frac{1}{n} \sum_{i=1}^n Y_i
+\]
+\end{mydef}
+
+\begin{mydef}
+\textbf{Sample Variance} 
+\[
+s^2 = \frac{1}{n-1} \sum_{i=1}^n(Y_i - \bar{Y})^2
+\]
+\end{mydef}
+
+\begin{remark}
+Properties of $\bar{Y}$ and $s^2$
+\begin{enumerate}
+\item $\mathbb{E}(\bar{Y}) = \mu$
+\item $Var(\bar{Y}) = \frac{\sigma^2}{n}$
+\item $\mathbb{E}(s^2) = \sigma^2$
+\end{enumerate}
+\end{remark}
+
+%
+%Need some more from slide deck 4
+%
+
+\begin{mydef}
+\textbf{Homoscedasticity}: $\sigma_{Y|X}^2$ is fixed
+across $X$ values.  
+\end{mydef}
+
+\begin{mydef}
+\textbf{Simple linear regression (SLR)} model: 
+\[
+Y_i = \beta_0 + \beta_1 X_i + \epsilon_i
+\]
+\begin{enumerate}
+\item $\epsilon$ and $X$ are independent
+\item $\mathbb{E}\epsilon_i = 0, \: i=1,2,...,n$
+\item $Var(\epsilon_i) = \sigma^2, \: i=1,2,...,n $
+\item $Cov(\epsilon_i, \epsilon_j) = 0, \: i \neq j$
+\end{enumerate}
+\end{mydef}
+
+\begin{mydef}
+\textbf{Normal equations} for the least square method: 
+\[
+\sum_{i=1}^n Y_i = nb_o + b_1\sum_{i=1}^n X_i
+\]
+\[
+\sum_{i=1}^nX_iY_i = b_o\sum_{i=1}^n X_i 
++ b_1\sum_{i=1}^n X_i^2
+\]
+\end{mydef}
+
+\begin{mydef}
+\textbf{Least Square Estimators}
+\[
+b_1 = \frac{\sum_{i=1}^n(X_i-\bar{X})(Y_i-\bar{Y})}
+{\sum_{i=1}^n(X_i-\bar{X})^2}
+\]
+\[
+b_0 = \bar{Y}-b_1\bar{X}
+\]
+\[
+s^2 = \text{MSE} = \frac{\text{SSE}}{n-2} 
+= \frac{1}{n-2}\sum_{i=1}^n e_i^2
+\]
+\end{mydef}
+
+\begin{theorem}
+\textbf{Gauss-Markov} Under the assumptions of
+the regression model, the least square estimators $b_0$
+and $b_1$ are \\
+ - linear \\
+ - unbiased \\
+ - have minimum variance among all unbiased linear estimators
+ of $\beta_0$ and $\beta_1$
+\end{theorem}
+
+\begin{mydef}
+Some properties of sample estimators:
+\begin{enumerate}
+\item $\sum_{i=1}^n e_i = 0 $
+\item $\sum_{i=1}^n \hat{Y_i} = \sum_{i=1}^n Y_i $
+\item $\sum_{i=1}^n X_i e_i = 0 $
+\item $\sum_{i=1}^n \hat{Y_i} e_i = 0 $
+\end{enumerate}
+\end{mydef}
+
+
+\begin{mydef}
+Sampling distribution of $b_1$
+\begin{enumerate}
+\item $b_1 = \sum_{i=1}^n k_iY_i$ where 
+\[
+k_i = \frac{X_i-\bar{X}}{\sum_{i=1}^n(X_i - \bar{X})^2}
+\]
+
+\item $\mathbb{E}(b_1) = \beta_1$
+
+\item $Var(b_1)$:
+\[
+\sigma^2\{b_1\} = 
+\frac{\sigma^2}{\sum_{i=1}^n(X_i - \bar{X})^2}
+\]
+
+\item Standard error:
+\[
+s^2\{b_1\} = \frac{\sigma^2}
+{\sum_{i=1}^n(X_i - \bar{X})^2} = 
+\frac{\text{MSE}}{\sum_{i=1}^n(X_i - \bar{X})^2}
+\]
+
+\end{enumerate}
+\end{mydef}
+
+\begin{mydef}
+Sampling distribution of $b_0$
+\begin{enumerate}
+\item $b_0 = \sum_{i=1}^n l_iY_i$ where 
+\[
+l_i = \frac{1}{n} - 
+\frac{(X_i-\bar{X})\bar{X}}
+{\sum_{i=1}^n(X_i - \bar{X})^2}
+\]
+
+\item $\mathbb{E}(b_0) = \beta_0$
+
+\item $Var(b_0)$:
+\[
+\sigma^2\{b_0\} = 
+\sigma^2 [ \frac{1}{n} + 
+\frac{\bar{X}^2}{\sum_{i=1}^n(X_i - \bar{X})^2} ]
+\]
+
+\item Standard error:
+\[
+s^2\{b_0\} =
+\text{MSE} [ \frac{1}{n} + 
+\frac{\bar{X}^2}{\sum_{i=1}^n(X_i - \bar{X})^2} ]
+\]
+
+\end{enumerate}
+\end{mydef}
+
+%
+%End of slide deck 6
+%
+
+\section*{Prediction in SLR}
+\begin{remark} Estimating $\mathbb{E}(Y_h)$ \\
+We estimate $\mathbb{E}(Y_h)$ by $\hat{Y_h} = b_0 + b_1X_h$ \\
+$\mathbb{E}(\hat{Y_h})\beta_0 +\beta_1X_h = 
+\mathbb{E}(Y_h) $ \\
+$Var(Y_h)$:
+\[
+\sigma^2\{Y_h\} = 
+\sigma^2 [ \frac{1}{n} + 
+\frac{(X_h - \bar{X})^2}{\sum_{i=1}^n(X_i - \bar{X})^2} ]
+\]
+Standard error:
+\[
+s^2\{Y_h\} =
+\text{MSE} [ \frac{1}{n} + 
+\frac{(X_h - \bar{X})^2}{\sum_{i=1}^n(X_i - \bar{X})^2} ]
+\]
+\end{remark}
+
+\begin{remark} C.I. of $\mathbb{E}(Y_h)$ \\
+The $100(1-\alpha)\%$ C.I. of $\mathbb{E}(Y_h)$ \\
+\[
+\hat{Y_h} \pm t_{1-\alpha/2;n-2}s\{\hat{Y_h}\}
+\]
+Where
+\[
+s^2\{\hat{Y_h}\} = 
+\text{MSE}[\frac{1}{n} + 
+\frac{(X_h - \bar{X})^2}{\sum_{i=1}^n(X_i - \bar{X})^2}]
+\]
+\end{remark}
+
+
+\begin{remark} P.I. of $\mathbb{E}(Y_{h(new)})$ \\
+The $100(1-\alpha)\%$ C.I. of $\mathbb{E}(Y_h)$ \\
+\[
+\hat{Y_h} \pm t_{1-\alpha/2;n-2}s\{pred\}
+\]
+Where
+\[
+s^2\{pred\} = s^2 + s^2\{\hat{Y_h}\} = 
+\text{MSE}[1+ \frac{1}{n} + 
+\frac{(X_h - \bar{X})^2}{\sum_{i=1}^n(X_i - \bar{X})^2}]
+\]
+\end{remark}
+
+%
+%I left out the prediction of m new observations
+%End of slide deck 7
+%
+
+\section*{Brown-Forsythe Test}
+Test for Heteroskedasticity
+\begin{enumerate}
+\item Let $n_1$ and $n_2$ be sample sizes for two groups
+with $n=n_1 + n_2$
+
+\item Divide the residual sets into two groups with
+medians $\tilde{e_1}$ and $\tilde{e_2}$
+
+\item Define,
+	\begin{enumerate}
+	\item $d_{i1} = \lvert e_{i1} - \tilde{e_1} \rvert$
+	, $i=1,...n_1$
+	\item $d_{j2} = \lvert e_{j2} - \tilde{e_2} \rvert$
+	, $j=1,...n_1$
+	\end{enumerate}
+
+\item Let $\bar{d_1}$ and $\bar{d_2}$ be means of $d$'s 
+from the previous groups, and let 
+\[
+s_d^2 = \frac{\sum_{i=1}^{n1}(d_{i1} - \bar{d_1})^2 + 
+\sum_{j=1}^{n2}(d_{j2} - \bar{d_2})^2}
+{n-2}
+\]
+
+\item Test Statistic:
+\[
+t_{BF}^* = \frac{\bar{d_1} - \bar{d_2}}
+{s_d\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+\]
+
+\item Reject the null hypothesis (constant variance) if
+$|t_{BF}^*| > t_{1-\alpha/2;n-2}$
+
+\end{enumerate}
+
+\section*{Breusch-Pagan Test}
+Assumptions:
+\begin{enumerate}
+\item $\epsilon_i$'s are independent and normal
+\item If $\sigma_i^2 = Var(\epsilon_i)$, then it satisfies
+$log\sigma_i^2 = \gamma_0 + \gamma_1X_i$
+\end{enumerate}
+
+\noindent Test Procedure:
+\begin{enumerate}
+\item Hypotheses:
+	\begin{enumerate}
+	\item $H_0: \gamma_1 = 0$
+	\item $H_a: \gamma_1 \neq 0$
+	\end{enumerate}
+\item Regress $e_i^2$ on $X_i$'s.  Let SSR* be the regression SS
+\item Test statistic: $\chi_{BP}^2 = \frac{\text{SSR}}{2}
+\div (\frac{\text{SSE}}{n})^2 $, where SSE is the error SS
+of the original regression.
+\item Reject $H_0$ if $\chi_{BP}^2 > \chi_{1-\alpha;1}^2$
+\end{enumerate}
+
+%
+%I have omitted the box-cox transformation method. 
+%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
