@@ -1,4 +1,4 @@
-\documentclass[14pt, oneside, letterpaper]{notes}
+\documentclass[14pt, oneside, letterpaper, fleqn]{notes}
 \usepackage{mathtools}
 
 \begin{document}
@@ -86,7 +86,16 @@ value of $X$: \\
 	$\mu_r = \mathbb{E}[(x-\mu)^r] $
 \end{mydef}
 
-\begin{theorem} 2.3.11 \\
+\begin{mydef}
+\textbf{Moment Generating Function}: For a r.v. $X$,
+the mgf is defined as: $M_X(t) = \mathbb{E}(e^{tx})$ 
+provided the expectation exists for all t in a neighborhood
+of 0.  \\ 
+I.e. $\mathbb{E} < \infty \: \forall \: t \in
+(-h,h) \text{ for some } h>0$
+\end{mydef}
+
+\begin{theorem} 2.3.11a \\
 Let $F_X(x)$ and $F_Y(y)$ be two cdfs all of whose moments
 exist.  If $X$, $Y$ have bounded support \\
 (i.e. Support$(f_X) = \{x: f_X(x)=0 \}$) \\
@@ -96,13 +105,158 @@ Example: P(Heads) for a coin flip and P(Even) for a die
 roll have the same distribution, but are different variables.
 \end{theorem}
 
+\begin{theorem} 2.3.11b \\
+$X$ and $Y$ have identical distributions iff $M_x(t) = 
+M_y(t)$ in some neighborhood of 0.
+\end{theorem}
+
+\begin{theorem} 2.3.12 \\
+Suppose $\{X_n: n\geq 1\}$ is a sequence of r.v.s with mgf
+$M_{x_n}(t)$.  Then: \\
+$\lim_{n \to \infty}M_{x_n}(t) = M_y(t) \iff 
+\lim_{n \to \infty}F_{x_n}(u) = F_y(u)$ for some r.v. $Y$
+for all continuity points $u$ of $F_y$ \\
+$X_n$ converges to $Y$ in distribution
+\end{theorem}
+
+\begin{remark} Properties of MGF 
+\begin{enumerate}
+\item $M_x(0) = 1$
+\item $M_{ax+b}(t) = e^{bt}M_x(at)$
+\item $\frac{d^n}{dt^n}M_x(t) \rvert_{t=0} =: M_x^{(n)} = 
+\mu_{n}'$ (nth raw moment of X)
+\end{enumerate}
+\end{remark}
+
+%
+%Chapter 3
+%
+
+\begin{theorem}
+Let $f(x)$ be any pdf and let $\mu$ and $\sigma > 0$ be any 
+given constants.  The the function
+\[
+g(x|\mu,\sigma) = \frac{1}{\sigma}f(\frac{x-\mu}{\sigma})
+\]
+is a pdf.
+\end{theorem}
+
+\begin{enumerate}
+\item $\mathscr{F} = \{f_0(x-\mu): \mu \in \mathbb{R} \}$ 
+is called the location family of pdfs and $\mu$ is the 
+location parameter
+
+\item $\mathscr{F} = \{\frac{1}{\sigma}f_0(\frac{x}{\sigma})
+: \sigma > 0 \}$ is called the scale family of pdfs
+and $\sigma$ is the scale parameter
+
+\item $\mathscr{F} = \{\frac{1}{\sigma}f_0
+(\frac{x - \mu}{\sigma}) : \mu \in \mathbb{R} \text{, } 
+\sigma > 0 \}$  is called the scale family of pdfs where 
+$\sigma$ is the scale parameter and $\mu$ is the location
+parameter
+\end{enumerate}
+
+\begin{theorem} 3.5.6\\
+Let $f_0$ be a pdf and $\mu \in \mathbb{R}, \sigma >0$ then 
+a r.v. $X$ has a pdf $f(x) = \frac{1}{\sigma}f_0
+(\frac{x- \mu}{\sigma})$ iff $Z$ has pdf $f_0(.)$
+and $x=\sigma z + \mu$
+\end{theorem}
+
+\begin{theorem}
+Let $Z$ be r.v. w/ pdf $f_0(x)$. Suppose $\mathbb{E}(z)<\infty$
+and $Var(z)<\infty$.  Then there exists r.v $X$ with pdf
+$f_0(x) = \frac{1}{\sigma}f_0 (\frac{x- \mu}{\sigma})$
+which satisfies:
+\begin{enumerate}
+\item $\mathbb{E}(x) = \sigma \mathbb{E}(z) + \mu$
+\item $Var(x) = \sigma^2Var(z)$
+\end{enumerate}
+\end{theorem}
+
 \begin{mydef}
-\textbf{Moment Generating Function}: For a r.v. $X$,
-the mgf is defined as: $M_X(t) = \mathbb{E}(e^{tx})$ 
-provided the expectation exists for all t in a neighborhood
-of 0.  I.e. $\mathbb{E} < \infty \: \forall \: t \in
-(-h,h) \text{for some} h>0$
+A pdf $f(x|\theta)$ is a member of the exponential family
+if we can write 
+\[
+f(x|\theta) = h(x)c(\theta) 
+exp[\sum_{j=1}^kw_j(\theta)t_j(x)]
+\]
+where
+\begin{enumerate}
+\item $h(x) \geq 0$ and does not depend on $\theta$
+\item $c(\theta) \geq 0$ and does not depend on $x$
+\item $w_j(\theta)$ doesn't depend on $x \forall j$
+\item $t_j(x)$ doesn't depend on $\theta \forall j$ 
+\end{enumerate}
 \end{mydef}
+
+\begin{mydef}
+\[
+\mathbb{I}_A =  
+	\begin{dcases}
+		1 & x \in A \\
+		0 & x \notin A
+	\end{dcases}
+\]
+\end{mydef}
+
+\begin{remark}
+Binomial(n,p) where n is also a parameter is not a member
+of the exponential class.  But if n is known, then for the
+parameter p, binomial is a member of the exponential family.
+\end{remark}
+
+\begin{theorem} 3.4.2 \\
+Suppose $X$ has pmf or pdf which belongs to a exponential
+family.  Then 
+\begin{enumerate}
+\item \[ \mathbb{E}(\sum_{i=1}^k \frac{\delta}{\delta \theta_j}
+w_i(\theta)t_i(X)) = - \frac{\delta}{\delta \theta_j}
+log c(\theta) \]
+
+\item \[ \mathbb{E}(\sum_{i=1}^k \frac{\delta}{\delta \theta_j}
+w_i(\theta)t_i(X)) = - \frac{\delta^2}{\delta \theta^2_j} - 
+\mathbb{E}(\sum_{i=1}^k \frac{\delta^2}{\delta \theta^2_j}
+w_i(\theta)t_i(X))
+log c(\theta) \]
+
+\end{enumerate}
+\end{theorem}
+
+\begin{theorem}3.6.1 \\
+Let $X$ be a r.v. and $g$ is a non-negative function.
+Then for any $r>0$
+\[P(g(x)\geq r) \leq \frac{\mathbb{E}[g(x)]}{r} \]
+\end{theorem}
+
+\begin{mydef} \textbf{Markov's Inequality} \\
+Let $X$ be r.v. then for every $\epsilon > 0$ and $k>0$
+\[
+P(|x| \geq \epsilon) \leq \frac
+{\mathbb{E}(|x|^k)}{\epsilon ^k}
+\]
+\end{mydef}
+
+\begin{mydef}\textbf{Chebyshev's Inequality}\\
+Let $X$ be r.v. with mean $\mu$ and variance $\sigma^2$
+Then for any $\epsilon > 0$
+\[ P(|x - \mu| < \epsilon) \leq \frac{\sigma^2}{\epsilon^2} \]
+\end{mydef}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
