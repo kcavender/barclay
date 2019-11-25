@@ -1,0 +1,73 @@
+\documentclass[11pt]{notes}
+%\usepackage{862style}
+\usepackage{mathtools}
+
+\headsep 0cm %
+\textheight 22cm %
+\footskip 1cm %
+\textwidth 16cm %
+\oddsidemargin 0cm %
+\evensidemargin 0cm %
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+%\theoremstyle{remark}
+\newtheorem{rem}[thm]{Remark}
+%\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{qn}[thm]{Question}
+\newtheorem{exm}[thm]{Example}
+\newtheorem{exr}[thm]{Exercise}
+
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+\begin{document}
+
+\section*{STT 861 (Fall 2019): Homework 5}
+
+This homework will be collected at the start of the lecture of \textbf{Monday Nov 18, 2019}. \bigskip
+
+\begin{qn}
+Suppose $(X,Y)$ are continuous random variables with joint pdf
+$$
+f(x,y) =
+\begin{dcases}
+  k(x+y), & \quad \text{if } 0 < x < 1, \quad 0 < y < 1, \\
+  0, & \quad \text{otherwise}
+\end{dcases}
+$$
+\begin{enumerate}
+  \item Find $k$.
+  \item Find marginal pdf of $X$, \thickspace i.e. $f_X(x)$.
+  \item Find marginal pdf of $Y$, \thickspace i.e. $f_Y(y)$.
+  \item Find conditional pdf of $X$ given $Y=y$, \thickspace i.e. $f_{X|Y}(x|y)$.
+  \item Find conditional pdf of $Y$ given $X=x$, \thickspace i.e. $f_{Y|X}(y|x)$.
+  \item Compute $P(X+Y \leq 1)$.
+  \item Find $P(Y < 0.5 | X = 0.4)$.
+  \item Compute $\textbf{Cov}(X,Y)$.
+\end{enumerate}
+\end{qn} \bigskip
+
+
+\begin{qn}
+Suppose $(X,Y)$ are continuous random variables with joint pdf
+$$
+f(x,y) =
+\begin{dcases}
+  2e^{-x-y}, & \quad \text{if } 0 < y < x < \infty, \\
+  0, & \quad \text{otherwise}
+\end{dcases}
+$$
+\begin{enumerate}
+  \item Find the joint cdf $F(x,y)$ of $(X,Y)$. \par
+  Hint: Consider three cases: (i) $0 < y < x$, (ii) $0 < x \leq y$, (iii) otherwise.
+  \item Find conditional pdf of $X$ given $Y=y$, \thickspace i.e. $f_{X|Y}(x|y)$.
+  \item Compute $\mathbb{E}(X|Y=5)$.
+  \item Compute $\textbf{Var}(X|Y=5)$.
+\end{enumerate}
+\end{qn} \bigskip
+
+
+\end{document}
